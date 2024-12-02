@@ -1,0 +1,244 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+  background-color: #eaeaea;
+  min-height: 100vh;
+}
+header{
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+}
+.logo{
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    opacity: 0;
+    animation: aniright 1s ease forwards;
+}
+.nav a{
+       display: inline-block;
+       font-size: 16px;
+       text-decoration: none;
+       color: #222;
+       font-weight: 500;
+       margin: 0 20px;
+       animation: anibottom .5s ease forwards;
+       animation-delay: calc(.2s * var(--i));
+
+}
+.nav a:hover,.nav a.active {
+    color: #1743e3;
+}
+.social{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.social a{
+    display: inline-flex;
+    justify-content: center;
+    color: #1743e3;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    transition: .5s;
+    z-index: 1;
+    opacity: 0;
+    animation: anileft .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.social a:hover{
+    border-color: #eaeaea;
+}
+.social a i{
+    font-size: 24px;
+    color: #eaeaea;
+    transform: rotate(-45deg);
+}
+section.Home{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    padding: 50px 8% 0;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.intro{
+    width: 550px;
+}
+.intro h1{
+    font-size: 50px;
+    line-height: 1;
+    opacity: 0;
+    animation: anitop 1s ease forwards;
+    animation-delay: 1s;
+}
+.intro h2{
+    font-size:40px;
+    color: #1743e3;
+    opacity: 0;
+    animation: aniright 1s ease forwards;
+    animation-delay: 1.3s;
+}
+.intro p{
+    font-size: 16px;
+    margin: 15px 0 30px;
+    opacity: 0;
+    animation: anileft2 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.btn a{
+   
+    background-color: #1743e3;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    border: 2px solid #1743e3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    color: #eaeaea;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    opacity: 0;
+    animation: anibottom 1s ease forwards;
+    animation-delay: 1.9s;
+}
+.btn a:hover{
+    background: transparent;
+    color: #1743e3;
+}
+.imgsec{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    right: -7%;
+}
+.imga{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #eaeaea;
+    border: 25px solid #1743e3;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: ZoomOut 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.imgsec .imga img{
+    position: absolute;
+    top: 105px;
+    left: -270px;
+    max-width: 665px;
+    padding-left: 50px;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 2s;
+}
+.box{
+    position: absolute;
+    top: -25%;
+    right: -25%;
+    height: 600px;
+    width: 700px;
+    background-color: #1743e3;
+    transform: rotate(45deg);
+    z-index: -2;
+    animation: leftside 1s ease forwards;
+}
+@keyframes aniright{
+    0%{
+        transform: translateX(-100px);
+        opacity: (0);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes anibottom{
+    0%{
+        transform: translateY(100px);
+        opacity: (0);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes anileft{
+    0%{
+        transform: translateX(100px) rotate(45deg);
+        opacity: (0);
+    }
+    100%{
+        transform: translateX(0)rotate(45deg);
+        opacity: 1;
+    }
+}
+@keyframes anileft2{
+    0%{
+        transform: translateX(100px);
+        opacity: (0);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes anitop{
+    0%{
+        transform: translateY(100px);
+        opacity: (0);
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes car{
+    0%{
+        transform: translate(300px,-300px) scale(0) rotate(-45deg);
+        opacity: (0);
+    }
+    100%{
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+@keyframes leftside{
+    0%{
+        right: -40%;
+        opacity: (0);
+    }
+    100%{
+        right: -25%;
+        opacity: 1;
+    }
+}
+@keyframes ZoomOut{
+    0%{
+        transform:scale(0) rotate(45deg);
+        opacity: (0);
+    }
+    100%{
+        transform: scale(1) rotate(45deg);
+        opacity: 1;
+    }
+}
